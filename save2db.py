@@ -22,7 +22,7 @@ jpegsCollection = client.crawl.jpegs
 
 import MySQLdb as mysql
 
-conn = mysql.connect(host="localhost", user="root", passwd="182182", db="crawl")
+conn = mysql.connect(host="localhost", user="pythonscript", passwd="182182", db="crawl")
 
 cursor = conn.cursor()
 # mongodb data example
@@ -60,12 +60,16 @@ def savePic( url ):# Database version
     conn.commit()
     return filestring
 
-while True:
-    # INDEXING
-
+def indexing():
     jpegsCollection.ensure_index([("saved", ASCENDING)] , background=True, cache_for=600)
     jpegsCollection.ensure_index([("lock" , ASCENDING)] , background=True, cache_for=600)
 
+
+
+while True:
+    
+
+    indexing()
     # QUERY FOR TARGETS
 
     toReserve = jpegsCollection.find( {"saved" : False, "tries" : 0, 'lock': None }, limit=300 )

@@ -1,10 +1,6 @@
 #!/usr/bin/python2.7
 
-
-# THIS WAS A ONCE OFF THING TO MOVE THINGS TO MONGODB
-
 # This is going to move all the data into a better db and reformat everything
-
 
 import os
 import time
