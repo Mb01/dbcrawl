@@ -1,5 +1,6 @@
 #!/usr/bin/python2.7
 
+# We don't really need to run this script anymore, it just reformatted some data in the db
 # This should fix some problems
 # Other systems HAVE TO BE OFF or there will be concurrency problems
 
