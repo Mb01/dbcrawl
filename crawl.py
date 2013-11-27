@@ -86,7 +86,7 @@ while True:
                 if not href: continue
                 try:
                     if href[-1] == '/':
-                        href = href[:-1]
+                        href = href[:-1]#WAIT< THAT DOES NOTHING, RIGHT!?
                     href = href.encode('utf-8')
                     if str(href).find('http') == 0:
                         pass                        
