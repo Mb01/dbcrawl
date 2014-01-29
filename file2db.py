@@ -4,11 +4,8 @@ import os
 
 import MySQLdb as mysql
 
-
-
 #could change hard coded to argparse
 os.chdir('pics')
-
 
 
 HOST = "localhost"
@@ -19,11 +16,10 @@ conn = mysql.connect(host=HOST,user=USER,passwd=PASSWORD, db='testdb')# database
 
 cursor = conn.cursor()
 
-# DROP A TABLE! REALLY!?!?!?
+# DROP A TABLE! REALLY?
 # Will wipe all data!
 #
-#
-#####query = DROP TABLE IF EXISTS Images #add quotes to use
+# query = DROP TABLE IF EXISTS Images #add quotes to use
 
 #cursor.execute( query )
 
@@ -37,7 +33,6 @@ cursor = conn.cursor()
 #                filename VARCHAR(200))
 #                """
 #cursor.execute( query )
-
 
 list_of_pics = os.listdir( os.getcwd() )
 
