@@ -77,15 +77,14 @@ def fetchLink( link ):
         linksCollection.save( link )
     return link
 
-
-
-
 #   IS THERE A SEED
 parser = ArgumentParser()
 parser.add_argument("seed", help="a url to start from")
 args = parser.parse_args()
 seed = args.seed
 DOMAIN = str( urlparse( seed ).netloc )
+
+# FIXME is this a bug?
 if linksCollection.find( {"visited" : False, "domain" : DOMAIN}, limit=1000):
     insertLink(seed, linksCollection)
 
@@ -125,8 +124,3 @@ while linksCollection.find_one( {"visited" : False, "domain" : DOMAIN}):
                         insertLink(href, linksCollection)                       
                 except UnicodeError as e:
                     print e
-
-
-
-
-
