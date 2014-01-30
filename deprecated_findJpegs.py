@@ -1,6 +1,7 @@
 #!/usr/bin/python2.7
 
 
+# this version deprecated
 
 # this is a script to find links that look like jpeg links... change the regex to find different things, could be better...
 
