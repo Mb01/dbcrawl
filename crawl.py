@@ -85,9 +85,12 @@ while True:
                 href = a.get('href')
                 if not href: continue
                 try:
+                    #we can process better than this, we should log of locations that
+                    #can't be parsed and fix them by category, also, there has to be "best practices" out there
+                    #
                     if href[-1] == '/':
                         href = href[:-1]#why are we throwing that away?
-                    href = href.encode('utf-8')
+                    href = href.encode('utf-8')#is that a shot in the dark?
                     if str(href).find('http') == 0:
                         pass                        
                         # do nothing
@@ -104,8 +107,3 @@ while True:
                         insertLink(href, linksCollection)                       
                 except UnicodeError as e:
                     print e
-
-
-
-
-
