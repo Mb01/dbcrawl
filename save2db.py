@@ -22,7 +22,7 @@ jpegsCollection = client.crawl.jpegs
 
 import MySQLdb as mysql
 
-conn = mysql.connect(host="localhost", user="pythonscript", passwd="182182", db="crawl")
+conn = mysql.connect(host="localhost", user="pythonscript", passwd="use_GPG_or_something", db="crawl")
 
 cursor = conn.cursor()
 # mongodb data example
